@@ -1,0 +1,72 @@
+{
+  "name": "nexium-browser",
+  "version": "1.0.1",
+  "description": "Credit Manager Automation Desktop App",
+  "main": "electron_main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder -w"
+  },
+  "build": {
+    "appId": "com.Nexium.app",
+    "productName": "Nexium Anti-Detect",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Nexiumbrowser",
+        "repo": "Nexium"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "SquircleMain.ico",
+      "artifactName": "Nexium-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Nexium Bot"
+    },
+    "asar": false,
+    "files": [
+      "**/*",
+      "node_modules/**/*",
+      "!dist",
+      "!profiles_db",
+      "!browser_profiles",
+      "!.git",
+      "!latest_ups_log.txt",
+      "!recent_files.txt",
+      "!success.txt",
+      "!.puppeteerrc_cache"
+    ]
+  },
+  "keywords": [],
+  "author": "Nexium",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "electron-updater": "^6.8.3",
+    "express": "^5.2.1",
+    "inquirer": "^8.2.7",
+    "png-to-ico": "^3.0.1",
+    "puppeteer": "^24.39.0",
+    "puppeteer-core": "^24.40.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "rebrowser-patches": "^1.0.19",
+    "rebrowser-puppeteer-core": "^24.8.1",
+    "resedit": "^3.0.2"
+  },
+  "devDependencies": {
+    "electron": "^40.7.0",
+    "electron-builder": "^26.8.1"
+  },
+  "icon": "SquircleMain.ico"
+}
